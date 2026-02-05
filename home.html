@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Age Cannabis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <!-- Logo image placeholder - in real scenario would be actual image -->
+                <!--<div class="logo-img" style="background-color: #d4af37; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2c2416; font-size: 1.5rem;">
+                    <i class="fas fa-utensils"></i>
+                </div>-->
+                <div class="logo-text">Stone Age <span>Cannabis</span></div>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#bookings">Sessions</a></li>
+                    <!--<li><a href="#locations">Locations</a></li>-->
+                    <li><a href="#about">About Us</a></li>
+                    <li class="cart-icon">
+                        <a href="#" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p style="text-align: center; padding: 20px;">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R 0.00</span>
+            </div>
+            <button class="btn checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page-content">
+            <div class="hero">
+                <div class="container">
+                    <h1>Welcome to Stone Age Cannabis</h1>
+                    <p>Experience the authentic premium hand-packed buds and unbleached rolling papers to stylish streetwear and infused edibles. We specialize in top-shelf cannabis for Stoners who want the best experience,every time.</p>
+                    <a href="#bookings" class="btn">Book a Session</a>
+                </div>
+            </div>
+
+            <div class="featured">
+                <div class="container">
+                    <h2 class="section-title">Our Specialties</h2>
+                    <div class="featured-grid">
+                        <div class="featured-item">
+                            <img src="/stoneage-img/SAtitan.jpg" alt="Stone Age Special Steak" class="featured-img">
+                            <div class="featured-content">
+                                <h3>Stone Age Special Cheese</h3>
+                                <p>'Cheese' is a famous indica dominant hybrid strain known for its distinctive pungent aroma and physically relaxing effects. It is a robust strain that can be successfully grown outdoors.Indica-dominant hybrid (usually around 60% indica, 40% Sativa).</p>
+                            </div>
+                        </div>
+                        <div class="featured-item">
+                            <img src="/stoneage-img/SAgorillaplatinum.jpeg" alt="Ancient Forest Pizza" class="featured-img">
+                            <div class="featured-content">
+                                <h3>Ancient Forest Block Berry</h3>
+                                <p>The Blockberry strain is a hybrid cross of Black Cherry Punch and Tropicana Cookies. It is known for its high THC content, typically between 28% and 30%, and is recommended for experience users. The buds are dense, olive-green with purple hues and fiery orange hairs, covered in a frosty trichome layer.</p>
+                            </div>
+                        </div>
+                        <div class="featured-item">
+                            <img src="/stoneage-img/SAgodfather.jpeg" alt="Prehistoric Dessert" class="featured-img">
+                            <div class="featured-content">
+                                <h3>Prehistoric Forbiddos</h3>
+                                <p>An Indica-dominant hybrid (Forbidden Fruit x Dosidos) that responds well to training techniques like topping and pinching to maximize yields. It has a flowering time of 8-9 weeks (56-63 days) and an outdoor harvest time of late September to early October.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Page -->
+        <section id="menu" class="page-content" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                
+                <div class="menu-categories" id="menuCategories">
+                    <button class="category-btn active" data-category="all">All Strains</button>
+                    <button class="category-btn" data-category="starters">Outdoor</button>
+                    <button class="category-btn" data-category="mains">Greenhouse</button>
+                    <button class="category-btn" data-category="desserts">Poly Tunnel</button>
+                    <button class="category-btn" data-category="drinks">Indoor</button>
+                </div>
+                
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Menu items will be loaded here dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookings Page -->
+        <section id="bookings" class="page-content" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">Book a Session</h2>
+                
+                <div class="booking-container">
+                    <div class="booking-form">
+                        <h3>Reservation Details</h3>
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date">Booking Date</label>
+                                <input type="date" id="date" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time">Booking Time</label>
+                                <select id="time" class="form-control" required>
+                                    <option value="">Select Time</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" class="form-control" required>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4" selected>4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                    
+                    <div class="booking-details">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> 068 553 2855</p>
+                            <p><i class="fas fa-envelope"></i> stoneagecannabis@gmail.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 1 Ann Cresent Simba , Sandton, South Africa</p>
+                            <p><i class="fas fa-clock"></i> Opening Hours: Mon-Fri 11:00 AM - 21:00 PM</p>
+                        </div>
+                        
+                        <h3 style="margin-top: 30px;">Membership Form</h3>
+                        <p>Join our Stone Age Club for exclusive offers and discounts!</p>
+                        <form id="membershipForm" style="margin-top: 20px;">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn">Join Club</button>
+                        </form>
+                        
+                        <h3 style="margin-top: 30px;">Our Location</h3>
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marked-alt" style="font-size: 2rem; margin-right: 10px;"></i>
+                                <span>Map of our location</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Page -->
+        <!--<section id="locations" class="page-content" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">Our Locations</h2>
+                
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Pretoria Restaurant" class="location-img">
+                        <div class="location-content">
+                            <h3>Pretoria Main Branch</h3>
+                            <p><strong>Address:</strong> 123 Stone Age Street, Pretoria, 0002</p>
+                            <p><strong>Phone:</strong> 068 553 2855</p>
+                            <p><strong>Hours:</strong> Mon-Sun 11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Johannesburg Restaurant" class="location-img">
+                        <div class="location-content">
+                            <h3>Johannesburg Branch</h3>
+                            <p><strong>Address:</strong> 45 Caveman Avenue, Sandton, Johannesburg, 2196</p>
+                            <p><strong>Phone:</strong> 011 785 4321</p>
+                            <p><strong>Hours:</strong> Mon-Sun 10:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card">
+                        <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Cape Town Restaurant" class="location-img">
+                        <div class="location-content">
+                            <h3>Cape Town Branch</h3>
+                            <p><strong>Address:</strong> 78 Primordial Road, Waterfront, Cape Town, 8001</p>
+                            <p><strong>Phone:</strong> 021 456 7890</p>
+                            <p><strong>Hours:</strong> Mon-Sun 12:00 PM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <!-- About Us Page -->
+        <section id="about" class="page-content" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">About Stone Age Cannabis</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <img src="/stoneage-img/Billboard.png" alt="Our Restaurant" style="width: 100%; border-radius: 8px; margin-bottom: 30px;">
+                        
+                        <h3 style="margin-bottom: 20px;">Our Story</h3>
+                        <p style="margin-bottom: 20px;">Founded in 2023, Stone Age Cannabis has been serving authentic premium hand-packed buds and unbleached rolling papers to stylish streetwear and infused edibles. We specialize in top-shelf cannabis for Stoners who want the best experience,every time.</p>
+                        
+                        <p style="margin-bottom: 20px;">We believe whether you're a new Stoner or a pro, We've got you covered with strains that hit just right. No stress, just premium products, good prices, and a team that's here to help you find your perfect match</p>
+                        
+                        <h3 style="margin-bottom: 20px; margin-top: 40px;">Our Philosophy</h3>
+                        <p>At Stone Age Cannabis, we believe that smoking should be an experience that transports you back in time while enjoying the quality cannabis. Our mission is to preserve ancient quality strains while creating memorable experiences for our Stoners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Stone Age Cannabis</div>
+                    <p>Experience authentic premium hand-packed quality buds. Established in 2023.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/StoneAge1948" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <!--<a href="https://tripadvisor.com" target="_blank" title="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>-->
+                    </div>
+                </div>
+                
+                <!--<div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#bookings">Book a Table</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>-->
+                
+                <div class="contact-info">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 1 Ann Cresent Simba , Sandton, South Africa</p>
+                    <p><i class="fas fa-phone"></i> 068 553 2855</p>
+                    <p><i class="fas fa-envelope"></i> stoneagecannabis@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 11:00 AM - 21:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Stone Age Cannabis. All rights reserved. | Website designed with passion for good weed.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>
