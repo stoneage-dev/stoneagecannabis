@@ -477,6 +477,17 @@
             font-size: 1.1rem;
         }
 
+        .whatsapp-checkout-btn {
+            background-color: #25D366;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .whatsapp-checkout-btn:hover {
+            background-color: #1da851;
+        }
+
+
         /* Bookings Page */
         .booking-container {
             display: grid;
@@ -642,3 +653,4 @@
             }
 
         }
+
