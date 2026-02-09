@@ -33,6 +33,7 @@
         const cartItemsEl = document.getElementById('cartItems');
         const cartTotalEl = document.getElementById('cartTotal');
         const checkoutBtn = document.getElementById('checkoutBtn');
+        const whatsappCheckoutBtn = document.getElementById('whatsappCheckoutBtn');
         const menuCategories = document.getElementById('menuCategories');
         const menuGrid = document.getElementById('menuGrid');
         const bookingForm = document.getElementById('bookingForm');
@@ -66,6 +67,7 @@
             
             closeCart.addEventListener('click', closeCartSidebar);
             checkoutBtn.addEventListener('click', checkout);
+            whatsappCheckoutBtn.addEventListener('click', checkoutViaWhatsApp);
             
             // Menu category filtering
             const categoryBtns = document.querySelectorAll('.category-btn');
@@ -311,6 +313,45 @@
             updateCart();
             closeCartSidebar();
         }
+        // Handle checkout via WhatsApp
+        function checkoutViaWhatsApp() {
+            if(cart.length === 0) {
+                alert('Your cart is empty. Add some items before checking out.');
+                return;
+            }
+            
+            // Format order message for WhatsApp
+            let message = `Hello Stone Age Restaurant! I would like to place an order:\n\n`;
+            
+            cart.forEach(item => {
+                message += `${item.quantity}x ${item.name} - R ${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+            
+            message += `\nTotal: R ${cartTotal.toFixed(2)}\n\n`;
+            message += `Please deliver to:\n[Your Address Here]\n\n`;
+            message += `Contact: [Your Phone Number Here]`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // WhatsApp phone number (South Africa format)
+            const phoneNumber = '27685532855'; // 27 is South Africa country code
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Clear cart after order
+            cart = [];
+            updateCart();
+            closeCartSidebar();
+            
+            // Show notification
+            showNotification('Opening WhatsApp to send your order...');
+        }
+
 
         // Handle booking form submission
         function handleBooking(e) {
@@ -401,4 +442,5 @@
                 }
             }
         `;
+
         document.head.appendChild(style);
