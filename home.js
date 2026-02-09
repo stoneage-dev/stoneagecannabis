@@ -335,7 +335,7 @@
             const encodedMessage = encodeURIComponent(message);
             
             // WhatsApp phone number (South Africa format)
-            const phoneNumber = '27685532855'; // 27 is South Africa country code
+            const phoneNumber = '27737094147'; // 27 is South Africa country code
             
             // Create WhatsApp URL
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -444,3 +444,4 @@
         `;
 
         document.head.appendChild(style);
+
