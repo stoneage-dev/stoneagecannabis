@@ -321,7 +321,7 @@
             }
             
             // Format order message for WhatsApp
-            let message = `Hello Stone Age Restaurant! I would like to place an order:\n\n`;
+            let message = `Hello Stone Age Cannabis! I would like to place an order:\n\n`;
             
             cart.forEach(item => {
                 message += `${item.quantity}x ${item.name} - R ${(item.price * item.quantity).toFixed(2)}\n`;
@@ -444,4 +444,5 @@
         `;
 
         document.head.appendChild(style);
+
 
