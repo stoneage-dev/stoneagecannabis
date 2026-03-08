@@ -1,13 +1,13 @@
 
         // Restaurant Menu Data
         const menuItems = [
-            { id: 1, name: "MUKIM TULLIP", category: "starters", price: 55, description: "unique, pungent, and sweet aroma profile , which is creamy, fruity, and reminiscent of ice cream." },
-            { id: 2, name: "SKYWALKER", category: "starters", price: 65, description: "THC content ranging from 15% to 23% and is prized for its relaxing and euphoric effects." },
-            { id: 3, name: "CHEESE", category: "starters", price: 55, description: "relaxing and euphoric hybrid effect that balances physical relaxation with a powerful head high" },
-            { id: 4, name: "EXODUS CHEESE", category: "mains", price: 85, description: "celebrated for its unique sensory profile and powerful, long-lasting effects." },
-            { id: 5, name: "BLUE FIRE", category: "mains", price: 95, description: "buds with a complex flavor profile of berries, citrus, and fuel." },
-            { id: 6, name: "MAKOMO", category: "mains", price: 85, description: "high THC content, typically ranging from 15-20% and sometimes reaching up to 23%" },
-            { id: 7, name: "SKITTLES", category: "mains", price: 95, description: "awardwinning cross between Grape Ape, Grapefruit, and an undisclosed third strain" },
+            { id: 1, name: "MUKIM TULLIP", category: "starters", price: 100, description: "unique, pungent, and sweet aroma profile , which is creamy, fruity, and reminiscent of ice cream." },
+            { id: 2, name: "SKYWALKER", category: "starters", price: 100, description: "THC content ranging from 15% to 23% and is prized for its relaxing and euphoric effects." },
+            { id: 3, name: "CHEESE", category: "starters", price: 100, description: "relaxing and euphoric hybrid effect that balances physical relaxation with a powerful head high" },
+            { id: 4, name: "EXODUS CHEESE", category: "mains", price: 100, description: "celebrated for its unique sensory profile and powerful, long-lasting effects." },
+            { id: 5, name: "BLUE FIRE", category: "mains", price: 100, description: "buds with a complex flavor profile of berries, citrus, and fuel." },
+            { id: 6, name: "MAKOMO", category: "mains", price: 100, description: "high THC content, typically ranging from 15-20% and sometimes reaching up to 23%" },
+            { id: 7, name: "SKITTLES", category: "mains", price: 100, description: "awardwinning cross between Grape Ape, Grapefruit, and an undisclosed third strain" },
             { id: 8, name: "BLOCK BERRY", category: "desserts", price: 145, description: "buds are dense, olive-green with purple hues and fiery orange hairs, covered in a frosty trichome layer."},
             { id: 9, name: "ORIGINAL BLITZ", category: "desserts", price: 155, description: "Indica-dominant hybrid (70% indica and 30% sativa)." },
             { id: 10, name: "FORBIDDOS", category: "desserts", price: 155, description: "This sweet-tasting variety provides hybrid effects that can be usefull during day or night." },
@@ -444,5 +444,6 @@
         `;
 
         document.head.appendChild(style);
+
 
 
