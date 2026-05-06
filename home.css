@@ -405,8 +405,8 @@
 
         .cart-header {
             padding: 20px;
-            background-color: #000000;
-            color: #a7a7a7;
+            background-color: #a7a7a7;
+            color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -415,7 +415,7 @@
         .close-cart {
             background: none;
             border: none;
-            color: #c48e8e;
+            color: #ff0202;
             font-size: 1.5rem;
             cursor: pointer;
         }
